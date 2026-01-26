@@ -8,6 +8,6 @@
 // console.log(process);
 console.log(process.env.PASSWORD);
 
-
+console.log("hello");
 
 
