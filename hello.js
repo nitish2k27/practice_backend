@@ -27,25 +27,90 @@ function showquantity(){
     console.log(variable);
 }
 
+//   const score={
+//         tie:0,
+//         win:0,
+//         loss:0,
+
+//     }
+
+// function rockpaper(input) {
+//     const arr = ['rock', 'paper', 'scissor'];
+  
+//     // pick random choice for computer
+//     const comp = arr[Math.floor(Math.random() * arr.length)];
+
+//     if (input === comp) {
+//         score.tie=score.tie+1;
+//     alert( `You and computer predicted ${input}. It's a draw.`);
+//            alert(score);
+        
+//     }
+//     else if (input === 'scissor' && comp === 'paper') {
+//         score.win=score.win+1;
+//         console.log(`You chose ${input}, computer chose ${comp}. You won!,`);
+//            console.log(score);
+//     }
+//     else if (input === 'rock' && comp === 'scissor') {
+//         score.win=score.win+1;
+//         console.log(`You chose ${input}, computer chose ${comp}. You won!,,`);
+//            console.log(score);
+//     }
+//     else if (input === 'paper' && comp === 'rock') {
+//         score.win=score.win+1;
+//         console.log(`You chose ${input}, computer chose ${comp}. You won!,,`);
+//            console.log(score);
+
+//     }
+//     else {
+//         score.loss=score.loss+1;
+//         console.log(`You chose ${input}, computer chose ${comp}. You lost!,,`);
+//         console.log(score);
+//     }
+// }
+
+
+const score = {
+    tie: 0,
+    win: 0,
+    loss: 0,
+};
+
 function rockpaper(input) {
     const arr = ['rock', 'paper', 'scissor'];
-
-    // pick random choice for computer
     const comp = arr[Math.floor(Math.random() * arr.length)];
 
+    let result = "";
+
     if (input === comp) {
-        console.log(`You and computer predicted ${input}. It's a draw.`);
+        score.tie++;
+        result = "DRAW";
     }
     else if (input === 'scissor' && comp === 'paper') {
-        console.log(`You chose ${input}, computer chose ${comp}. You won!`);
+        score.win++;
+        result = "YOU WIN";
     }
     else if (input === 'rock' && comp === 'scissor') {
-        console.log(`You chose ${input}, computer chose ${comp}. You won!`);
+        score.win++;
+        result = "YOU WIN";
     }
     else if (input === 'paper' && comp === 'rock') {
-        console.log(`You chose ${input}, computer chose ${comp}. You won!`);
+        score.win++;
+        result = "YOU WIN";
     }
     else {
-        console.log(`You chose ${input}, computer chose ${comp}. You lost!`);
+        score.loss++;
+        result = "YOU LOSE";
     }
+
+    // Single alert with everything
+    alert(
+        `Result: ${result}\n\n` +
+        `You chose      : ${input}\n` +
+        `Computer chose : ${comp}\n\n` +
+        `Score:\n` +
+        `Win  : ${score.win}\n` +
+        `Loss : ${score.loss}\n` +
+        `Tie  : ${score.tie}`
+    );
 }
