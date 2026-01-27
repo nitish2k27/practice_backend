@@ -114,3 +114,15 @@ function rockpaper(input) {
         `Tie  : ${score.tie}`
     );
 }
+
+function reset(){
+    score.tie=0,
+    score.win=0,
+    score.loss=0;
+    alert(
+        `scores has been reset:\n
+        wins:${score.win}\n
+        loss:${score.loss}\n
+        tie:${score.tie}`
+    );
+}
