@@ -70,12 +70,20 @@ function showquantity(){
 // }
 
 
-const score = {
-    tie: 0,
-    win: 0,
-    loss: 0,
-};
+// const score = { we will stop using the thing obbject evertime eith zero we will give the obj with local storage
+//     tie: 0,
+//     win: 0,
+//     loss: 0,
+// };
 
+
+//convert from json string to normal before converting
+const score=JSON.parse(localStorage.getItem('score'));//assig an abject with the score variable from local storage 
+
+
+
+
+// console.log(JSON.parse(localStorage.getItem('score')));it gives the score were you ended last time when you refresh
 function rockpaper(input) {
     const arr = ['rock', 'paper', 'scissor'];
     const comp = arr[Math.floor(Math.random() * arr.length)];
@@ -103,6 +111,9 @@ function rockpaper(input) {
         result = "YOU LOSE";
     }
 
+    localStorage.setItem('score',JSON.stringify(score));//as local storage do not
+    //  allow object or any thing convert ot string
+
     // Single alert with everything
     alert(
         `Result: ${result}\n\n` +
@@ -126,5 +137,3 @@ function reset(){
         tie:${score.tie}`
     );
 }
-
-
