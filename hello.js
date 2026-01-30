@@ -126,3 +126,5 @@ function reset(){
         tie:${score.tie}`
     );
 }
+
+
